@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Copy and Paste Editor</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Courier New', monospace;
+            background-color: #2e2e2e;
+            color: #dcdcdc;
+        }
+
+        /* Container for the editor */
+        .editor-container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* Code textarea styling */
+        textarea {
+            width: 50%;
+            height: 100%;
+            background-color: #1e1e1e;
+            color: #dcdcdc;
+            border: 2px solid #444;
+            border-radius: 5px;
+            font-size: 16px;
+            padding: 10px;
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+            word-wrap: normal;
+            overflow: auto;
+            line-height: 1.4;
+            resize: none;
+        }
+
+        /* Syntax highlight color */
+        textarea:focus {
+            outline: none;
+        }
+
+        /* iframe styling */
+        iframe {
+            width: 50%;
+            height: 100%;
+            border: none;
+            background-color: #1e1e1e;
+        }
+
+        /* Adding some padding around iframe */
+        iframe {
+            padding: 10px;
+        }
+
+        /* Header style for the editor */
+        h1 {
+            text-align: center;
+            color: #ffcc00;
+        }
+
+        .container {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>CCAP HTML5 Code Editor</h1>
+    </div>
+
+    <div class="editor-container">
+        <textarea id="code-editor" spellcheck="false">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Code Editor Preview</title>
+        <style>
+            body {
+                background-color: #fff;
+                color: #333;
+                font-family: Arial, sans-serif;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Hello, World!</h1>
+    </body>
+</html>
+        </textarea>
+
+        <iframe id="output"></iframe>
+    </div>
+
+    <script>
+        // Get references to the textarea and iframe
+        const textarea = document.getElementById("code-editor");
+        const iframe = document.getElementById("output");
+
+        // Update iframe content when textarea content changes
+        textarea.addEventListener("input", function() {
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write(textarea.value);
+            iframeDoc.close();
+        });
+
+        // Initial content load
+        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+        iframeDoc.open();
+        iframeDoc.write(textarea.value);
+        iframeDoc.close();
+    </script>
+
+</body>
+</html>
