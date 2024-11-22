@@ -15,3 +15,6 @@ Copy and paste these CSS codes, but as a website!
     </ul>
   </li>
 </ol>
+<hr>
+<h2>Credits</h2>
+<p>This project wasmade all by mrmacattax@gmail.com (my main email)</p>
