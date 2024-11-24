@@ -1,4 +1,4 @@
-# codingcopyandpaste
+# CCAP | Coding Copy And Paste
 Copy and paste these CSS codes, but as a website!
 <hr>
 <h2>How to make your own link</h2>
