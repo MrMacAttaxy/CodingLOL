@@ -1,7 +1,7 @@
 # codingcopyandpaste
 Copy and paste these CSS codes, but as a website!
 <hr>
-<h2>How to makeyour own link</h2>
+<h2>How to make your own link</h2>
 <ol>
   <li>
     <h3>Dynu</h3>
