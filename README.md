@@ -25,7 +25,8 @@ Copy and paste these CSS codes, but as a website!
 <h2>All Links</h2>
 <p>We have multiple link you can go to!</p>
 <ul>
-  <li><a herf="http://codingcopyandpaste.mywire.org/">http://codingcopyandpaste.mywire.org/</a></li>
-  <li><a herf="https://edu.tatuarte.cl/">https://edu.tatuarte.cl/</a></li>
+  <li>http://codingcopyandpaste.mywire.org/</li>
+  <li>https://edu.tatuarte.cl/</li>
+  <li>https://learning.tatuarte.cl/</li>
 </ul>
 <hr>
