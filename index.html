@@ -101,6 +101,19 @@
             height: 75px;
             transition: 0.2s;
             }
+            .gradient-animation {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(270deg, #ff7e5f, #feb47b);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            }
+
+            @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+}
         </style>
 
     </head>
@@ -204,6 +217,29 @@ height: 75px;
 transition: 0.2s;
 }
         </textarea>
+            <h3>Gradient Animation</h3>
+        <div id="gradient-animation">
+        </div>
+        <textarea readonly spellcheck="none">
+<style>
+body {
+margin: 0;
+height: 100vh;
+background: linear-gradient(270deg, #ff7e5f, #feb47b);
+background-size: 400% 400%;
+animation: gradientAnimation 15s ease infinite;
+}
+
+@keyframes gradientAnimation {
+0% { background-position: 0% 50%; }
+50% { background-position: 100% 50%; }
+100% { background-position: 0% 50%; }
+}
+</style>
+<body>
+</body>
+        </textarea>
+            
             <h2><i>Made by MrMacAttax@gmail.com</i></h2>
         </center>
         <!-- Load external JavaScript -->
