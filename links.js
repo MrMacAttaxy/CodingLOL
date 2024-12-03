@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", () => {
     container.style.gap = "15px";
     container.style.margin = "20px";
     container.style.padding = "10px";
-    container.style.backgroundColor = "#1a1a2e";
     document.body.appendChild(container);
 
     // Generate each link with styling and a close button
@@ -22,11 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapper.style.position = "relative";
         wrapper.style.width = "300px";
         wrapper.style.height = "100px";
-        wrapper.style.padding = "10px";
-        wrapper.style.borderRadius = "5px";
-        wrapper.style.backgroundColor = "rgba(255, 255, 255, 0.1)";
-        wrapper.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.3)";
-        wrapper.style.textAlign = "center";
         wrapper.style.display = "flex";
         wrapper.style.flexDirection = "column";
         wrapper.style.justifyContent = "center";
@@ -49,12 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
         closeButton.style.position = "absolute";
         closeButton.style.top = "5px";
         closeButton.style.right = "5px";
-        closeButton.style.background = "red";
-        closeButton.style.color = "white";
+        closeButton.style.background = "transparent";
+        closeButton.style.color = "red";
         closeButton.style.border = "none";
-        closeButton.style.borderRadius = "50%";
-        closeButton.style.width = "20px";
-        closeButton.style.height = "20px";
+        closeButton.style.fontSize = "18px";
         closeButton.style.cursor = "pointer";
 
         // Close button functionality
