@@ -1,9 +1,9 @@
 // JavaScript to dynamically generate, style links, and add a close button
 document.addEventListener("DOMContentLoaded", () => {
     const links = [
-        { url: "https://example.com", text: "Example 1" },
-        { url: "https://your-site.com", text: "Your Site" },
-        { url: "https://another-link.com", text: "Another Link" },
+        { url: "https://cascadingstylesheets.mciahh.org/", text: "https://cascadingstylesheets.mciahh.org/" },
+        { url: "https://learning.tatuarte.cl/", text: "https://learning.tatuarte.cl/" },
+        { url: "https://edu.tatuarte.cl/", text: "https://edu.tatuarte.cl/" },
     ];
 
     const container = document.createElement("div");
