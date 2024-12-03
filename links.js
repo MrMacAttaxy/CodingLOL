@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     container.style.margin = "20px";
     container.style.padding = "10px";
     document.body.appendChild(container);
-    container.style.cssText += "display: flex; justify-content: center; align-items: center; height: 100vh;";
+    container.style.cssText += "display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0;";
 
 
     // Generate each link with styling and a close button
