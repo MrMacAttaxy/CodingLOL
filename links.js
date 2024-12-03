@@ -21,6 +21,10 @@ document.addEventListener("DOMContentLoaded", () => {
         wrapper.style.position = "relative";
         wrapper.style.width = "300px";
         wrapper.style.height = "100px";
+        wrapper.style.padding = "10px";
+        wrapper.style.borderRadius = "8px";
+        wrapper.style.backgroundColor = "rgba(0, 0, 0, 0.8)"; // Box background color
+        wrapper.style.boxShadow = "0 4px 6px rgba(0, 0, 0, 0.3)";
         wrapper.style.display = "flex";
         wrapper.style.flexDirection = "column";
         wrapper.style.justifyContent = "center";
@@ -43,10 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
         closeButton.style.position = "absolute";
         closeButton.style.top = "5px";
         closeButton.style.right = "5px";
-        closeButton.style.background = "transparent";
-        closeButton.style.color = "red";
+        closeButton.style.background = "red";
+        closeButton.style.color = "white";
         closeButton.style.border = "none";
-        closeButton.style.fontSize = "18px";
+        closeButton.style.borderRadius = "50%";
+        closeButton.style.width = "20px";
+        closeButton.style.height = "20px";
         closeButton.style.cursor = "pointer";
 
         // Close button functionality
