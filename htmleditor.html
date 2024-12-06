@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coding Copy and Paste Editor</title>
     <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/theme/dracula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/show-hint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/addon/hint/html-hint.min.js"></script>
     <style>
         body {
             margin: 0;
@@ -13,14 +19,12 @@
             color: #dcdcdc;
         }
 
-        /* Container for the editor */
         .editor-container {
             display: flex;
             height: 100vh;
         }
 
-        /* Code textarea styling */
-        textarea {
+        #code-editor {
             width: 50%;
             height: 100%;
             background-color: #1e1e1e;
@@ -37,25 +41,14 @@
             resize: none;
         }
 
-        /* Syntax highlight color */
-        textarea:focus {
-            outline: none;
-        }
-
-        /* iframe styling */
         iframe {
             width: 50%;
             height: 100%;
             border: none;
             background-color: #1e1e1e;
-        }
-
-        /* Adding some padding around iframe */
-        iframe {
             padding: 10px;
         }
 
-        /* Header style for the editor */
         h1 {
             text-align: center;
             color: #ffcc00;
@@ -64,12 +57,25 @@
         .container {
             padding: 20px;
         }
+
+        #runButton {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #ffcc00;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>CCAP HTML5 Code Editor</h1>
+        <button id="runButton">Run</button>
     </div>
 
     <div class="editor-container">
@@ -99,23 +105,46 @@
     </div>
 
     <script>
-        // Get references to the textarea and iframe
         const textarea = document.getElementById("code-editor");
         const iframe = document.getElementById("output");
+        const runButton = document.getElementById("runButton");
 
-        // Update iframe content when textarea content changes
-        textarea.addEventListener("input", function() {
+        // Initialize CodeMirror on the textarea
+        const editor = CodeMirror.fromTextArea(textarea, {
+            mode: "htmlmixed",
+            theme: "dracula",
+            lineNumbers: true,
+            autoCloseTags: true,
+            autoCloseBrackets: true,
+            hintOptions: { schemaInfo: HTMLHint.defaults },
+            extraKeys: {
+                "Ctrl-Space": "autocomplete",
+                "Tab": "indentMore",       // Indent on Tab key
+                "Shift-Tab": "indentLess" // Unindent on Shift+Tab
+            }
+        });
+
+        // Function to update iframe content
+        function updateIframe() {
             const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
             iframeDoc.open();
-            iframeDoc.write(textarea.value);
+            iframeDoc.write(editor.getValue());
             iframeDoc.close();
+        }
+
+        // Update iframe content when the 'Run' button is clicked
+        runButton.addEventListener("click", updateIframe);
+
+        // Prevent Tab key from moving focus (Chrome behavior)
+        editor.getWrapperElement().addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                e.preventDefault(); // Prevent the default behavior of the Tab key (switching focus)
+                editor.execCommand('indentMore'); // Indent the code instead
+            }
         });
 
         // Initial content load
-        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-        iframeDoc.open();
-        iframeDoc.write(textarea.value);
-        iframeDoc.close();
+        updateIframe();
     </script>
 
 </body>
