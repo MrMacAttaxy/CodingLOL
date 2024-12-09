@@ -1,5 +1,5 @@
 self.__uv$config = {
-    prefix: 'https://codingcopyandpaste.mywire.org/gps/uv',
+    prefix: 'https://sites.google.com/view/gsproxy/files/uv',
     bare:'https://bare.benrogo.net/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
