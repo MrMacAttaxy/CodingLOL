@@ -1,4 +1,4 @@
-importScripts('/froggies/uv/uv.bundle.js');
+importScripts('https://codingcopyandpaste.mywire.org/gps/uv/uv.bundle.js');
 importScripts('/froggies/uv/uv.config.js');
 
 class UVServiceWorker extends EventEmitter {     
