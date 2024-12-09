@@ -1,4 +1,4 @@
-importScripts("https://codingcopyandpaste.mywire.org/gps//uv/uv.sw.js");
+importScripts("https://codingcopyandpaste.mywire.org/gsp/uv/uv.sw.js");
 
 const sw = new UVServiceWorker();
 
