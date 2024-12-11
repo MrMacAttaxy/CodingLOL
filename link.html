@@ -1,0 +1,11 @@
+<script>
+// Get the full URL after the ? in the current URL
+var fullUrl = window.location.href.split('?')[1];
+
+// If a URL is provided, redirect to it
+if (fullUrl) {
+    // Ensure the URL is decoded and properly formatted for redirection
+    window.location.href = decodeURIComponent(fullUrl);
+}
+
+</script>
